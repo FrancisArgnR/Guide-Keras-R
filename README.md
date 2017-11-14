@@ -48,9 +48,6 @@ Devtools is necesary because it allow us to install and packages from GitHub.
 
   _install_keras()_
 
-
-
-  
 ### References
 
 https://keras.rstudio.com/
@@ -58,3 +55,78 @@ https://keras.rstudio.com/
 https://medium.com/towards-data-science/how-to-implement-deep-learning-in-r-using-keras-and-tensorflow-82d135ae4889
 
 https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using-devtools-on-ubuntu-16-04
+
+<br>
+<br>
+
+# Functions-Keras-R
+
+### Load the library
+
+  _library(keras)_
+
+### Check versions
+
+  _packageVersion("keras")_
+
+  _packageVersion("tensorflow")_
+
+### Create the model
+
+  _model <- keras_model_sequential()_
+
+### Add layers to the model
+
+  - Fully connected layers
+  
+    _model %>% layer_dense(units, activation, input_shape)_
+    
+      - units: numbers of neurons in the first hidden layer
+      - activation: activation function ('tanh', 'relu', 'linear', ...)
+      - input_shape: number of neurons in the input layer
+
+  - dasdasasf
+  
+    _model %>% layer_dropout(rate)_
+    
+      - rate:
+
+### Compile the model
+
+  _model %>% compile(loss, optimizer, metrics)_
+  
+   - loss: objective function ('mean_squared_error', 'binary_crossentropy', ...)
+   - optimizer: optimizer for estimating and updating the model parameters ('sgd', 'rmsprop', ...)
+   - metrics: the metric to assess the performance of the model ('accuracy', ...)
+
+
+### Fit the model
+
+  _model %>% fit(X_train, Y_train, epochs, batch_size)_
+  
+  - X_train: explicative variable/variables for training 
+  - Y_train: explicated variable for training 
+  - epochs: the number of times the algorithm work with the entire training data
+  - batch_size: the size of sample to be passed through the algorithm in each epoch
+
+### Predict with the model
+
+  _model %>% predict(X_data)_
+  
+  - X_data: explicative data for training to predict the data train, or explicative data for test to predict the test data
+
+### Evaluate the model
+
+  _model %>% evaluate(X_data, Y_data)_
+  
+  - X_train: explicative data for training to evaluate the training, or explicative data for test to predict the testing
+  - Y_train: explicated data for training to evaluate the training, or explicated data for test to predict the testing
+  
+### Help
+
+  _help(package = keras)_
+  
+  
+### References
+
+https://www.linkedin.com/pulse/finally-deep-learning-keras-tensorflow-r-richard-wanjohi-ph-d/
