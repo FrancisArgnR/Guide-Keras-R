@@ -73,54 +73,73 @@ https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using
 
 ### Create the model
 
-  _model <- keras_model_sequential()_
+  - The main data structure in Keras is a model, a way to organize a linear stack of layers.
+  
+    _model <- keras_model_sequential()_
 
-### Add layers to the model
+### Add layers to the model (using the pipe (%>%) operator)
 
   - Fully connected layers
   
     _model %>% layer_dense(units, activation, input_shape)_
     
       - units: numbers of neurons in the first hidden layer
-      - activation: activation function ('tanh', 'relu', 'linear', ...)
-      - input_shape: number of neurons in the input layer
+      - activation: activation function ('tanh', 'relu', 'linear', 'softmax' ...)
+      - input_shape: number of neurons in the input layer (the first layer in a sequential model (and only the first) needs to receive information about its input shape
 
-  - dasdasasf
+  - Dropout
   
     _model %>% layer_dropout(rate)_
     
-      - rate:
+      - rate: fraction of the input units to drop (between 0 and 1)
+
+### Print the details of the model
+
+   _summary(model)_
 
 ### Compile the model
 
-  _model %>% compile(loss, optimizer, metrics)_
-  
-   - loss: objective function ('mean_squared_error', 'binary_crossentropy', ...)
-   - optimizer: optimizer for estimating and updating the model parameters ('sgd', 'rmsprop', ...)
-   - metrics: the metric to assess the performance of the model ('accuracy', ...)
+  - Configure a Keras model for training
 
+    _model %>% compile(loss, optimizer, metrics)_
+
+     - loss: objective function ('mean_squared_error', 'binary_crossentropy', ...)
+     - optimizer: optimizer for estimating and updating the model parameters ('sgd', 'rmsprop', ...)
+     - metrics: the metric to assess the performance of the model ('accuracy', ...) (for classification problem)
 
 ### Fit the model
 
-  _model %>% fit(X_train, Y_train, epochs, batch_size)_
+  - Function to train the model
   
-  - X_train: explicative variable/variables for training 
-  - Y_train: explicated variable for training 
-  - epochs: the number of times the algorithm work with the entire training data
-  - batch_size: the size of sample to be passed through the algorithm in each epoch
+    _model %>% fit(X_train, Y_train, epochs, batch_size)_
+
+    - X_train: explicative variable/variables for training 
+    - Y_train: explicated variable for training 
+    - epochs: the number of times the algorithm work with the entire training data
+    - batch_size: the size of sample to be passed through the algorithm in each epoch
 
 ### Predict with the model
 
-  _model %>% predict(X_data)_
-  
-  - X_data: explicative data for training to predict the data train, or explicative data for test to predict the test data
+  - Generate predictions on new data (or on train and test data)(for regression)
 
+    _model %>% predict(X_data)_
+
+      - X_data: explicative data for training to predict the data train, or explicative data for test to predict the test data
+
+  - Generate predictions on new data (or on train and test data)(for classification)
+
+    _model %>% predict_classes(X_data)_
+
+      - X_data: explicative data for training to predict the data train, or explicative data for test to predict the test data
+      
 ### Evaluate the model
 
-  _model %>% evaluate(X_data, Y_data)_
+  - Evaluate the model’s performance on the training and test data
   
-  - X_train: explicative data for training to evaluate the training, or explicative data for test to predict the testing
-  - Y_train: explicated data for training to evaluate the training, or explicated data for test to predict the testing
+    _model %>% evaluate(X_data, Y_data)_
+
+    - X_train: explicative data for training to evaluate the training, or explicative data for test to predict the testing
+    - Y_train: explicated data for training to evaluate the training, or explicated data for test to predict the testing
   
 ### Help
 
@@ -128,5 +147,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using
   
   
 ### References
+
+https://keras.rstudio.com/
 
 https://www.linkedin.com/pulse/finally-deep-learning-keras-tensorflow-r-richard-wanjohi-ph-d/
