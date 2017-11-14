@@ -118,6 +118,14 @@ https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using
     - epochs: the number of times the algorithm work with the entire training data
     - batch_size: the size of sample to be passed through the algorithm in each epoch
 
+### Plot the training phase
+
+  - The Keras fit() method returns an R object containing the training history, including the value of metrics at the end of each epoch
+  
+    _plot(Fit_Return)_
+    
+      - Fit_Return: the object returned by fit() function
+
 ### Predict with the model
 
   - Generate predictions on new data (or on train and test data)(for regression)
