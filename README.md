@@ -116,7 +116,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using
     - X_train: explicative variable/variables for training 
     - Y_train: explicated variable for training 
     - epochs: the number of times the algorithm work with the entire training data
-    - batch_size: the size of sample to be passed through the algorithm in each epoch
+    - batch_size: the size of sample to be passed through the algorithm in each epoch (32 by default)
 
 ### Plot the training phase
 
