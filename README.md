@@ -87,6 +87,17 @@ https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using
       - activation: activation function ('tanh', 'relu', 'linear', 'softmax' ...)
       - input_shape: number of neurons in the input layer (the first layer in a sequential model (and only the first) needs to receive information about its input shape
 
+  - Long Short Term Memory
+  
+    _model %>% layer_lstm(units, activation, input_shape or batch_input_shape, return_sequences, stateful)_
+    
+      - units: numbers of lstm neurons in the first hidden layer
+      - activation: activation function ('tanh', 'relu', 'linear', 'softmax' ...)
+      - input_shape: dimensionality of the input -> c(timestep (number of time steps per inputs), features (number of columns))
+      - batch_imput_shape: shape of the data -> c(batch_size (normally the number os samples), timestep (number of time steps per inputs), features (number of columns))
+      - return_sequences: true or false. 
+      - stateful: true or false. The states computed for the samples in one batch will be reused as initial states for the samples in the next batch. Stateful to true needs a fixed batch size for your model (with batch_input_shape), and shuffle = False in fit().
+            
   - Dropout
   
     _model %>% layer_dropout(rate)_
@@ -111,12 +122,13 @@ https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using
 
   - Function to train the model
   
-    _model %>% fit(X_train, Y_train, epochs, batch_size)_
+    _model %>% fit(X_train, Y_train, epochs, batch_size, shuffle)_
 
     - X_train: explicative variable/variables for training 
     - Y_train: explicated variable for training 
     - epochs: the number of times the algorithm work with the entire training data
     - batch_size: the size of sample to be passed through the algorithm in each epoch (32 by default)
+    - shuffle: true or false. Shuffle the training data before each epoch.
 
 ### Plot the training phase
 
