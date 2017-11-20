@@ -1,7 +1,3 @@
-
-## PATH DE LOS ARCHIVOS
-path <- "~/Documentos/2017-06-14-DeepLearning/PruebasR"
-
 ####################################################
 ### Load the libraries and read and plot the data
 
