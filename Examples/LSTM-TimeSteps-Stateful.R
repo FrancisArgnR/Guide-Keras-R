@@ -99,11 +99,11 @@ for(i in 1:75){
 # Estimate model performance
 trainScore <- model %>% evaluate(x_train, y_train, batch_size=batch_size)
 print(paste('Train Score: ',trainScore,' MSE. ',sqrt(trainScore),' RMSE.', sep=""))
-model %>% reset_states()
+#model %>% reset_states()
 
 testScore <- model %>% evaluate(x_test, y_test, batch_size=batch_size)
 print(paste('Test Score: ',testScore,' MSE. ',sqrt(testScore),' RMSE.', sep=""))
-model %>% reset_states()
+#model %>% reset_states()
 
 accuracy(test[,,1][,1],kilos[(k+1+ii):length(kilos)])[2]
 
@@ -112,9 +112,9 @@ accuracy(test[,,1][,1],kilos[(k+1+ii):length(kilos)])[2]
 #train <- model %>% predict_classes(x.train)
 #test <- model %>% predict_classes(x.test)
 train <- model %>% predict(x_train, batch_size=batch_size)
-model %>% reset_states()
+#model %>% reset_states()
 test <- model %>% predict(x_test, batch_size=batch_size)
-model %>% reset_states()
+#model %>% reset_states()
 
 # Plot the results
 
