@@ -97,8 +97,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using
       - batch_imput_shape: shape of the data -> c(batch_size (normally the number os samples), timestep (number of time steps per inputs), features (number of columns))
       - return_sequences: true or false. 
       - stateful: true or false. The states computed for the samples in one batch will be reused as initial states for the samples in the next batch. Stateful to true needs a fixed batch size for your model (with batch_input_shape), and shuffle = False in fit().
-            
-  - Dropout
+ 
+### Dropout
+ 
+ - The dropout rate for regularization, is an effort to limit overfitting and improve the model’s ability to generalize.
   
     _model %>% layer_dropout(rate)_
     
