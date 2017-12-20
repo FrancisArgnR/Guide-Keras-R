@@ -56,6 +56,8 @@ https://medium.com/towards-data-science/how-to-implement-deep-learning-in-r-usin
 
 https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using-devtools-on-ubuntu-16-04
 
+https://tensorflow.rstudio.com/installation_gpu.html
+
 <br>
 <br>
 
